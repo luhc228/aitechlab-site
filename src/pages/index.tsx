@@ -17,14 +17,12 @@ const IndexPage = () => {
 
   return (
     <Layout>
-      <Seo title="Home" />
+      <Seo title="首页" />
       <Banner scrollToContent={scrollToContent} />
       <div ref={separator} />
       <div className={styles.researchField}>
         <h2>研究领域</h2>
-        <div className={styles.cards}>
-          <ResearchField />
-        </div>
+        <ResearchField />
       </div>
     </Layout>
   );
