@@ -10,9 +10,9 @@ function Header() {
     <nav className={styles.nav}>
       <StaticImage
         className={styles.logo}
-        src="../../images/logo.png"
+        src="../../assets/images/logo.png"
         alt="Logo"
-        height={48}
+        height={36}
       />
       <div className={styles.navMenu}>
         {menuData.map(({ link, title }) => (
@@ -21,9 +21,7 @@ function Header() {
           </Link>
         ))}
       </div>
-      <div className={styles.bar}>
-        <FaBars />
-      </div>
+      <FaBars className={styles.bar} />
     </nav>
   );
 }
