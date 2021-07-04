@@ -1,0 +1,48 @@
+.nav {
+  background: transparent;
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem calc((100vw - 1300px) / 2);
+  z-index: 100;
+  position: relative;
+
+  .logo {
+    background-size: contain;
+  }
+
+  .navMenu {
+    display: flex;
+    align-items: center;
+
+    @media screen and (max-width: 768px) {
+      display: none;
+    }
+
+    .menuItem {
+      color: #fff;
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      padding: 0 1rem;
+      height: 100%;
+      cursor: pointer;
+    }
+  }
+
+  .bar {
+    display: none;
+    color: #fff;
+
+    @media screen and (max-width: 768px) {
+      display: block;
+      position: absolute;
+      top: 0;
+      right: 0;
+      transform: translate(-100%, 75%);
+      font-size: 1.8rem;
+      cursor: pointer;
+    }
+  }
+}
