@@ -27,7 +27,7 @@ function Footer() {
     <div className={styles.footer}>
       <Row className={styles.container} gutter={8}>
         {edges.map(({ node: { id, mainTitle, links = [] } }) => (
-          <Col id={id} className={styles.items} xs={24} sm={12} md={6}>
+          <Col key={id} className={styles.items} xs={24} sm={12} md={6}>
             <h4>{mainTitle}</h4>
             {links.map(({ title, link }) => (
               <a className={styles.item} href={link} key={link} target="_blank">
