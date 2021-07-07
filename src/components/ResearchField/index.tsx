@@ -1,5 +1,5 @@
 import React from 'react';
-import { List, Card, Row, Col } from 'antd';
+import { List, Row, Col } from 'antd';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import { useStaticQuery, graphql } from 'gatsby';
 import * as styles from './index.module.scss';
