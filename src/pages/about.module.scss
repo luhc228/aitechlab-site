@@ -1,0 +1,18 @@
+.container {
+  width: auto;
+
+  article {
+    padding: 20px;
+    margin: 60px 0 100px;
+    
+    .item {
+      margin: 0 0 3rem;
+
+      p {
+        font-size: 0.9rem;
+        line-height: 1.6;
+        margin: 0 0 1rem;
+      }
+    } 
+  }
+}

@@ -1,0 +1,29 @@
+.container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+
+  .slider {
+    height: 30rem;
+    width: calc(100% - 80px);
+  }
+
+  svg {
+    width: 40px;
+    height: 40px;
+  }
+
+  svg:nth-of-type(1) {
+    left: -3rem;
+  }
+
+   svg:nth-of-type(2) {
+    right: -3rem;
+  }
+}
+
+
+.image {
+  height: 30rem;
+  background-size: contain;
+}
