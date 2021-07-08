@@ -31,6 +31,10 @@
       height: 100%;
       cursor: pointer;
     }
+
+    .blackMenuItem {
+      color: black;
+    }
   }
 
   .bar {
@@ -42,9 +46,13 @@
       position: absolute;
       top: 0;
       right: 0;
-      transform: translate(-100%, 85%);
-      font-size: 1.8rem;
+      transform: translate(-100%, 95%);
+      font-size: 1.6rem;
       cursor: pointer;
     }
   }
+}
+
+.navWhiteBackground {
+  background-color: #fff;
 }
