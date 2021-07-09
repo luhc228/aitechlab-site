@@ -29,7 +29,12 @@ function Header() {
     </Menu>
   );
   return (
-    <nav className={cx(styles.nav, { [styles.navWhiteBackground]: !isIndex })}>
+    <nav
+      className={cx(styles.nav, {
+        [styles.navWhiteBackground]: !isIndex,
+        [styles.shadow]: !isIndex,
+      })}
+    >
       {/* TODO: can't use src=`${pathname === '/' ? '../../assets/images/logo-white.png' : '../../assets/images/logo.png'}` */}
       {isIndex ? (
         <StaticImage
