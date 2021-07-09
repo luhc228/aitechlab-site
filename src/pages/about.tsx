@@ -32,7 +32,6 @@ function About({ data }) {
                 <div className={styles.item} key={slug}>
                   <h2>{title}</h2>
                   <div
-                    key="content"
                     className={styles.content}
                     dangerouslySetInnerHTML={{ __html: html }}
                   />

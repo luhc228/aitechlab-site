@@ -13,7 +13,6 @@ function Hof({ data }) {
       <div className={styles.container}>
         <main>
           <div
-            key="desc"
             className={styles.desc}
             dangerouslySetInnerHTML={{
               __html: markdownRemark.html,

@@ -12,7 +12,7 @@ function HofCard({ title, content, image }) {
         </Col>
         <Col className={styles.content} xs={24} sm={16}>
           <h3>{title}</h3>
-          <p dangerouslySetInnerHTML={{ __html: content }} />
+          <div dangerouslySetInnerHTML={{ __html: content }} />
         </Col>
       </Row>
     </div>
