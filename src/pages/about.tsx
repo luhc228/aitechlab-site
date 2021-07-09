@@ -12,25 +12,7 @@ const sectionExtraComponents = {
   '/about/life': <LifeCarousel />,
 };
 
-function About() {
-  const data = useStaticQuery(graphql`
-    query AboutQuery {
-      allMarkdownRemark(
-        filter: { fileAbsolutePath: { regex: "/about/" } }
-        sort: { order: ASC, fields: frontmatter___id }
-      ) {
-        edges {
-          node {
-            html
-            frontmatter {
-              title
-              slug
-            }
-          }
-        }
-      }
-    }
-  `);
+function About({ data }) {
   const {
     allMarkdownRemark: { edges },
   } = data;
@@ -49,7 +31,11 @@ function About() {
               return (
                 <div className={styles.item} key={slug}>
                   <h2>{title}</h2>
-                  <p dangerouslySetInnerHTML={{ __html: html }} />
+                  <div
+                    key="content"
+                    className={styles.content}
+                    dangerouslySetInnerHTML={{ __html: html }}
+                  />
                   {sectionExtraComponents[slug] || null}
                 </div>
               );
@@ -60,5 +46,24 @@ function About() {
     </Layout>
   );
 }
+
+export const query = graphql`
+  query AboutQuery {
+    allMarkdownRemark(
+      filter: { fileAbsolutePath: { regex: "/about/" } }
+      sort: { order: ASC, fields: frontmatter___id }
+    ) {
+      edges {
+        node {
+          html
+          frontmatter {
+            title
+            slug
+          }
+        }
+      }
+    }
+  }
+`;
 
 export default About;

@@ -1,7 +1,7 @@
 import React from 'react';
 import Layout from '../components/layout';
 import Seo from '../components/seo';
-import { useStaticQuery, graphql } from 'gatsby';
+import { graphql } from 'gatsby';
 import HofCardList from '../components/HofCardList';
 import * as styles from './hof.module.scss';
 
@@ -12,7 +12,8 @@ function Hof({ data }) {
       <Seo title="名人堂" />
       <div className={styles.container}>
         <main>
-          <p
+          <div
+            key="desc"
             className={styles.desc}
             dangerouslySetInnerHTML={{
               __html: markdownRemark.html,
