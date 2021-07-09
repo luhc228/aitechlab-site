@@ -5,39 +5,7 @@ import { useStaticQuery, graphql } from 'gatsby';
 import HofCardList from '../components/HofCardList';
 import * as styles from './hof.module.scss';
 
-function Hof() {
-  const data = useStaticQuery(graphql`
-    query HofDescQuery {
-      markdownRemark(fileAbsolutePath: { regex: "/hof/index/" }) {
-        html
-        frontmatter {
-          title
-          slug
-        }
-      }
-      allMarkdownRemark(
-         filter: {
-           fileAbsolutePath: { regex: "/hof/*/*/" }
-           frontmatter: { slug: { ne: "/hof/index" } }
-         }
-      ) {
-        edges {
-          node {
-            frontmatter {
-              title
-              slug
-              cover {
-                childImageSharp {
-                  gatsbyImageData
-                }
-              }
-            }
-            html
-          }
-        }
-      }
-    }
-  `);
+function Hof({ data }) {
   const { allMarkdownRemark, markdownRemark } = data;
   return (
     <Layout>
@@ -56,5 +24,38 @@ function Hof() {
     </Layout>
   );
 }
+
+export const query = graphql`
+  query HofDescQuery {
+    markdownRemark(fileAbsolutePath: { regex: "/hof/index/" }) {
+      html
+      frontmatter {
+        title
+        slug
+      }
+    }
+    allMarkdownRemark(
+      filter: {
+        fileAbsolutePath: { regex: "/hof/*/*/" }
+        frontmatter: { slug: { ne: "/hof/index" } }
+      }
+    ) {
+      edges {
+        node {
+          frontmatter {
+            title
+            slug
+            cover {
+              childImageSharp {
+                gatsbyImageData
+              }
+            }
+          }
+          html
+        }
+      }
+    }
+  }
+`;
 
 export default Hof;
