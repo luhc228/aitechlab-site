@@ -39,6 +39,7 @@ export const query = graphql`
         fileAbsolutePath: { regex: "/hof/*/*/" }
         frontmatter: { slug: { ne: "/hof/index" } }
       }
+      sort: { order: ASC, fields: frontmatter___id }
     ) {
       edges {
         node {
