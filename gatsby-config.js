@@ -25,8 +25,8 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `intros`,
-        path: `${__dirname}/content/intros`,
+        name: `hof`,
+        path: `${__dirname}/content/hof`,
       },
     },
     {

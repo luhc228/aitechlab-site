@@ -55,10 +55,10 @@ const CustomCard = ({ alt, content, title, img }) => {
 
   return (
     <Row className={styles.card} gutter={12}>
-      <Col span={8} className={styles.col}>
+      <Col className={styles.col} xs={24} sm={8}>
         <GatsbyImage className={styles.image} image={image} alt={alt} />
       </Col>
-      <Col span={16} className={styles.content}>
+      <Col className={styles.content} xs={24} sm={16}>
         <h3>{title}</h3>
         <div>{content}</div>
       </Col>

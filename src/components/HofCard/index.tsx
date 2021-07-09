@@ -1,9 +1,20 @@
 import React from 'react';
+import { Row, Col } from 'antd';
+import { GatsbyImage } from 'gatsby-plugin-image';
+import * as styles from './index.module.scss';
 
-function HofCard() {
+function HofCard({ title, content, image }) {
   return (
     <div>
-      HofCard
+      <Row className={styles.card} gutter={12}>
+        <Col className={styles.col} xs={24} sm={8}>
+          <GatsbyImage className={styles.image} image={image} alt={title} />
+        </Col>
+        <Col className={styles.content} xs={24} sm={16}>
+          <h3>{title}</h3>
+          <p dangerouslySetInnerHTML={{ __html: content }} />
+        </Col>
+      </Row>
     </div>
   );
 }
