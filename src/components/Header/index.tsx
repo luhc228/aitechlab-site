@@ -55,7 +55,9 @@ function Header() {
           <Link
             className={cx(styles.menuItem, {
               [styles.blackMenuItem]: !isIndex,
-              [styles.MenuItemActive]: link === pathname,
+              [styles.MenuItemActive]:
+                link ===
+                (/\/$/.test(pathname) ? pathname.replace(/\/$/, '') : pathname),
             })}
             key={link}
             to={link}

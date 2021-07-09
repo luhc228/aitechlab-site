@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Row, Col } from 'antd';
 import { GatsbyImage } from 'gatsby-plugin-image';
 import * as styles from './index.module.scss';

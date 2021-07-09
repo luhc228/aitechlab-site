@@ -18,7 +18,10 @@
     max-width: 180px;
     max-height: 180px;
     background-size: contain;
-    border-radius: 50%;
+
+    img {
+      border-radius: 50%;
+    }
   }
 
   .content {
