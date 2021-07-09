@@ -1,6 +1,6 @@
 ---
-slug: "/about/team"
-title: "团队"
+slug: /about/team
+title: 团队
 id: 1
 ---
 

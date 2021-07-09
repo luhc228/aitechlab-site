@@ -1,6 +1,6 @@
 ---
-slug: "/about/life"
-title: "生活"
+slug: /about/life
+title: 生活
 id: 3
 ---
 

@@ -6,7 +6,7 @@ import HofCardList from '../components/HofCardList';
 import * as styles from './hof.module.scss';
 
 function Hof() {
-  const hofDescData = useStaticQuery(graphql`
+  const data = useStaticQuery(graphql`
     query HofDescQuery {
       markdownRemark(fileAbsolutePath: { regex: "/hof/index/" }) {
         html
@@ -15,9 +15,30 @@ function Hof() {
           slug
         }
       }
+      allMarkdownRemark(
+         filter: {
+           fileAbsolutePath: { regex: "/hof/*/*/" }
+           frontmatter: { slug: { ne: "/hof/index" } }
+         }
+      ) {
+        edges {
+          node {
+            frontmatter {
+              title
+              slug
+              cover {
+                childImageSharp {
+                  gatsbyImageData
+                }
+              }
+            }
+            html
+          }
+        }
+      }
     }
   `);
-
+  const { allMarkdownRemark, markdownRemark } = data;
   return (
     <Layout>
       <Seo title="名人堂" />
@@ -26,10 +47,10 @@ function Hof() {
           <p
             className={styles.desc}
             dangerouslySetInnerHTML={{
-              __html: hofDescData.markdownRemark.html,
+              __html: markdownRemark.html,
             }}
           />
-          <HofCardList />
+          <HofCardList data={allMarkdownRemark.edges} />
         </main>
       </div>
     </Layout>

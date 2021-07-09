@@ -1,5 +1,5 @@
 ---
-title: "卢恒昌"
+title: 卢恒昌
 cover: photo.jpg
 ---
 
