@@ -28,17 +28,25 @@
     "slick-carousel": "^1.8.1"
   },
   "devDependencies": {
+    "@types/ali-oss": "^6.0.9",
+    "@types/fs-readdir-recursive": "^1.0.0",
     "@types/react-helmet": "^6.1.1",
-    "prettier": "2.2.1"
+    "ali-oss": "^6.15.2",
+    "fs-readdir-recursive": "^1.1.0",
+    "prettier": "2.2.1",
+    "ts-node": "^10.1.0",
+    "typescript": "^4.3.5"
   },
   "license": "MIT",
   "scripts": {
     "build": "gatsby build",
+    "postbuild": "npm run upload:oss",
     "develop": "gatsby develop",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
     "start": "npm run develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
+    "upload:oss": "ts-node ./scripts/uploadBuildAssets.ts",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
   }
 }
