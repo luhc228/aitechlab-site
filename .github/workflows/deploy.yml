@@ -4,6 +4,9 @@ on: [push]
 
 jobs:
   build-and-deploy:
+    env:
+      ACCESS_KEY_ID: ${{ secrets.ACCESS_KEY_ID }}
+      ACCESS_KEY_SECRET: ${{ secrets.ACCESS_KEY_SECRET }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
@@ -11,6 +14,8 @@ jobs:
         run: echo >>$GITHUB_ENV BRANCH_NAME=${GITHUB_REF#refs/heads/}
       - name: Echo branch name
         run: echo ${BRANCH_NAME}
+      - name: env
+        run: echo ${ACCESS_KEY_ID}
       - uses: actions/setup-node@v1
         with:
           node-version: 12
@@ -20,8 +25,4 @@ jobs:
       - name: Build
         run: npm run build
       - name: Deploy
-        env:
-          ACCESS_KEY_ID: ${{ secrets.ACCESS_KEY_ID }}
-          ACCESS_KEY_SECRET: ${{ secrets.ACCESS_KEY_SECRET }}
-        run: echo "ACCESS_KEY_ID"
         run: npm run upload:oss
