@@ -1,15 +1,15 @@
 import React from 'react';
-import { useStaticQuery, graphql } from 'gatsby';
+import { graphql } from 'gatsby';
 import Layout from '../components/layout';
 import Seo from '../components/seo';
 import * as styles from './about.module.scss';
 import ResearchField from '../components/ResearchField';
-import LifeCarousel from '../components/LifeCarousel';
+import LifePhotoCarousel from '../components/LifePhotoCarousel';
 
 const sectionExtraComponents = {
   '/about/team': null,
   '/about/explore': <ResearchField />,
-  '/about/life': <LifeCarousel />,
+  '/about/life': <LifePhotoCarousel />,
 };
 
 function About({ data }) {

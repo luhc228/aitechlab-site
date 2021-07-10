@@ -5,7 +5,7 @@ import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import { useStaticQuery, graphql } from 'gatsby';
 import * as styles from './index.module.scss';
 
-function LifeCarousel() {
+function LifePhotoCarousel() {
   const data = useStaticQuery(graphql`
     query LifePhotosQuery {
       allFile(
@@ -34,7 +34,6 @@ function LifeCarousel() {
         arrows
         prevArrow={<MdKeyboardArrowLeft color="#000" />}
         nextArrow={<MdKeyboardArrowRight color="#000" />}
-        responsive={[]}
       >
         {getImages(data)}
       </Slider>
@@ -59,4 +58,4 @@ function getImages(data) {
   return arr;
 }
 
-export default LifeCarousel;
+export default LifePhotoCarousel;
