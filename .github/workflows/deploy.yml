@@ -1,0 +1,23 @@
+name: deploy
+
+on: [push]
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - name: Set branch name
+        run: echo >>$GITHUB_ENV BRANCH_NAME=${GITHUB_REF#refs/heads/}
+      - name: Echo branch name
+        run: echo ${BRANCH_NAME}
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 12
+          registry-url: https://registry.npm.taobao.org/
+      - name: Install Dependencies
+        run: npm install
+      - name: Build
+        run: npm run build
+      - name: Deploy
+        run: npm run upload:oss

@@ -7,7 +7,7 @@
   "dependencies": {
     "antd": "^4.16.6",
     "classnames": "^2.3.1",
-    "gatsby": "^3.6.2",
+    "gatsby": "3.6.2",
     "gatsby-plugin-gatsby-cloud": "^2.6.1",
     "gatsby-plugin-image": "^1.6.0",
     "gatsby-plugin-manifest": "^3.6.0",
@@ -40,7 +40,6 @@
   "license": "MIT",
   "scripts": {
     "build": "gatsby build",
-    "postbuild": "npm run upload:oss",
     "develop": "gatsby develop",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
     "start": "npm run develop",
