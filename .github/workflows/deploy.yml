@@ -4,9 +4,6 @@ on: [push]
 
 jobs:
   build-and-deploy:
-    env:
-      ACCESS_KEY_ID: ${{ secrets.ACCESS_KEY_ID }}
-      ACCESS_KEY_SECRET: ${{ secrets.ACCESS_KEY_SECRET }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
@@ -23,4 +20,7 @@ jobs:
       - name: Build
         run: npm run build
       - name: Deploy
+        env:
+          ACCESS_KEY_ID: ${{ oss.ACCESS_KEY_ID }}
+          ACCESS_KEY_SECRET: ${{ oss.ACCESS_KEY_SECRET }}
         run: npm run upload:oss
