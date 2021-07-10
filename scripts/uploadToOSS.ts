@@ -1,6 +1,6 @@
 import OSS from 'ali-oss';
-console.log(process.env.ACCESS_KEY_ID);
-console.log(process.env.ACCESS_KEY_SECRET);
+console.log('xx', process.env.ACCESS_KEY_ID);
+console.log('yy', process.env.ACCESS_KEY_SECRET);
 const ossClient = new OSS({
   bucket: 'aitechlab-site',
   endpoint: 'oss-cn-qingdao.aliyuncs.com',
