@@ -1,7 +1,7 @@
 [
   {
     "title": "深度学习",
-    "content": "研究方向主要包括医学图像处理、物体/人脸检测，跟踪和识别；超分辨率图像增强，文字识别，3D视觉，SLAM等。",
+    "content": "研究方向主要包括医学图像处理、超分辨率图像增强、文字识别、3D视觉、SLAM，以及目标检测、跟踪和识别等。",
     "img": "../assets/images/deepLearning.png",
     "alt": "Deep Learning"
   },
