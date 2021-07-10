@@ -20,4 +20,7 @@ jobs:
       - name: Build
         run: npm run build
       - name: Deploy
+        env:
+          ACCESS_KEY_ID: ${{ secrets.ACCESS_KEY_ID }}
+          ACCESS_KEY_SECRET: ${{ secrets.ACCESS_KEY_SECRET }}
         run: npm run upload:oss
